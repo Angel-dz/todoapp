@@ -7,6 +7,21 @@ import java.time.LocalDateTime;
 
 public class Task {
 
+    @Id
+    private long id;
+
+    private String title;
+
+    private String description;
+
+    private boolean completed;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    private LocalDateTime updatedAt;
+
+    private LocalDate dueDate;
+
     public long getId() {
         return id;
     }
@@ -55,27 +70,12 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 
-    public LocalDate getTargetCompletion() {
-        return targetCompletion;
+    public LocalDate getDueDate() {
+        return dueDate;
     }
 
-    public void setTargetCompletion(LocalDate targetCompletion) {
-        this.targetCompletion = targetCompletion;
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
     }
-
-    @Id
-    private long id;
-
-    private String title;
-
-    private String description;
-
-    private boolean completed;
-
-    private LocalDateTime createdAt = LocalDateTime.now();
-
-    private LocalDateTime updatedAt;
-
-    private LocalDate targetCompletion;
 
 }
